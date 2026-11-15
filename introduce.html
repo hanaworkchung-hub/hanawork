@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鍾憶慧 Hana Chung｜平面設計 × UI設計</title>
+<meta name="description" content="平面設計、社群行銷、影片剪輯、電商美編、UI 設計。10 年以上設計經歷，歡迎品牌主與電商業者洽詢合作。">
+<style>
+:root{
+  --bg:#FAF7F2; --surface:#FFFFFF; --ink:#2B2A33; --muted:#6B6A75; --line:#E7E1D8;
+  --accent:#D9573A; --accent-soft:#FBE9E3; --accent-ink:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#16151A; --surface:#201F26; --ink:#F1EEE8; --muted:#A6A3AE; --line:#34323B;
+    --accent:#F0785C; --accent-soft:#3A2822; --accent-ink:#1B0F0B; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.7}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 6px;font-weight:600}
+h2{font-size:clamp(26px,4vw,34px);margin:0 0 28px;line-height:1.25}
+
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none;letter-spacing:.02em}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.role{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:4px 12px;border-radius:99px;font-size:14px;font-weight:600}
+.hero h1{font-size:clamp(40px,7vw,64px);line-height:1.1;margin:14px 0 4px}
+.hero .en{font-size:20px;color:var(--muted);margin:0 0 16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--surface);padding:3px 12px;border-radius:99px;font-size:14px}
+.hero p.bio{color:var(--muted);max-width:34em;margin:0 0 24px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:11px 22px;border-radius:10px;text-decoration:none;font-weight:600;border:0;cursor:pointer;font-size:15px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.portrait{aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--accent-soft);border:1px solid var(--line)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.stat b{display:block;font-size:28px;color:var(--accent);line-height:1.2}
+.stat span{font-size:14px;color:var(--muted)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 16px;border-radius:99px;font-size:14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;display:flex;flex-direction:column}
+.card:hover{border-color:var(--accent)}
+.cover{aspect-ratio:4/3;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:34px;font-weight:700;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:14px 16px 18px}
+.card small{color:var(--accent);font-weight:600}
+.card h3{font-size:17px;margin:2px 0 4px}
+.card p{font-size:14px;color:var(--muted);margin:0}
+
+.plan{background:var(--surface);border:2px solid var(--accent);border-radius:18px;padding:24px;margin-bottom:28px;display:grid;grid-template-columns:auto 1fr;gap:10px 32px;align-items:center}
+.plan .badge{font-size:13px;color:var(--accent);font-weight:700}
+.plan .price b{font-size:40px;line-height:1}
+.plan .price span{color:var(--muted);font-size:14px}
+.plan ul{margin:0;padding-left:18px;color:var(--muted)}
+.plan ul b{color:var(--ink)}
+details.item{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+details.item summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 18px}
+details.item summary::-webkit-details-marker{display:none}
+.item .name{flex:1}
+.item .name b{display:block}
+.item .name small{color:var(--muted)}
+.item .caret{transition:transform .2s;color:var(--muted)}
+details[open] .caret{transform:rotate(90deg)}
+.strip{display:flex;gap:12px;overflow-x:auto;padding:4px 18px 18px;scroll-snap-type:x proximity}
+.shot{flex:0 0 auto;width:min(240px,70vw);scroll-snap-align:start}
+.shot img,.shot video{width:100%;max-height:360px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--accent-soft)}
+.shot small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+
+.levels{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:28px}
+.lv{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lv em{font-style:normal;font-size:13px;color:var(--accent);font-weight:600}
+.lv.core{border-color:var(--accent)}
+h3.sub{font-size:16px;margin:26px 0 12px}
+.platforms{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.platforms li{background:var(--surface);border:1px solid var(--line);padding:4px 14px;border-radius:99px;font-size:14px}
+
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px;text-align:center}
+.contact p{color:var(--muted);max-width:30em;margin:0 auto 22px}
+.contact .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer .soc{display:flex;gap:16px}
+
+dialog{border:0;border-radius:18px;padding:0;max-width:min(860px,94vw);width:100%;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.dlg{padding:22px;max-height:88vh;overflow:auto}
+.dlg header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+.dlg h3{margin:0;font-size:20px}
+.dlg .x{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:16px}
+.dlg .pics{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:16px}
+.dlg .pics img{width:100%;border-radius:10px;border:1px solid var(--line)}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  .portrait{max-width:300px;order:-1}
+  .plan{grid-template-columns:1fr}
+  .nav ul{gap:14px}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Hana Chung</a>
+    <nav aria-label="主選單">
+      <ul>
+        <li><a href="#works">作品集</a></li>
+        <li><a href="#pricing">報價</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#contact">聯絡</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="role">平面設計遠端合作人員</span>
+        <h1>鍾憶慧</h1>
+        <p class="en">Hana Chung</p>
+        <ul class="tags">
+          <li>平面設計</li><li>社群行銷</li><li>影片剪輯</li><li>電商美編</li><li>UI 設計</li>
+        </ul>
+        <p class="bio">崇右技術學院數位媒體設計系畢業，10 年以上設計經歷。擅長視覺傳達、廣告素材、電商美編與社群經營。聆聽業主需求，創造更多商業價值。</p>
+        <a class="btn" href="#works">查看作品集 →</a>
+      </div>
+      <div class="portrait"><img src="https://hanaintroduce.vercel.app/image/me.jpeg" alt="鍾憶慧 Hana Chung" onerror="this.remove()"></div>
+    </div>
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>10+</b><span>年資歷</span></div>
+        <div class="stat"><b>多家</b><span>合作公司</span></div>
+        <div class="stat"><b>多元</b><span>行業跨度</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="wrap">
+      <p class="eyebrow">Portfolio</p>
+      <h2>作品集</h2>
+      <div class="chips" id="chips" role="group" aria-label="作品分類"></div>
+      <div class="grid" id="worksGrid"></div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <p class="eyebrow">Pricing</p>
+      <h2>服務報價</h2>
+      <p style="color:var(--muted);margin-top:-14px">以下為常見配套方案，實際報價依需求而定，歡迎洽詢。點選下方項目可瀏覽相關作品範例。</p>
+      <div class="plan">
+        <div>
+          <div class="badge">熱門方案</div>
+          <div style="font-weight:700;font-size:20px;margin:4px 0">月費社群經營方案</div>
+        </div>
+        <ul>
+          <li>LINE@ 圖文訊息 <b>4</b> 篇（含群發設定）</li>
+          <li>FB 貼文圖文 <b>8</b> 張（含文案發送）</li>
+          <li>FB / IG 限時動態 <b>40</b> 張</li>
+          <li>靜態廣告素材 <b>2</b> 張</li>
+          <li>動態廣告素材 <b>2</b> 支</li>
+        </ul>
+      </div>
+      <h3 class="sub" style="margin-top:0">項目作品參考</h3>
+      <div id="priceList"></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow">Skills</p>
+      <h2>專業技能</h2>
+      <div class="levels" id="levels"></div>
+      <h3 class="sub">操作平台</h3>
+      <ul class="platforms">
+        <li>東森</li><li>松果</li><li>蝦皮</li><li>樂天</li><li>LINE</li><li>MOMO</li><li>PChome</li><li>SHOPLINE</li><li>Facebook</li><li>Instagram</li><li>Yahoo 商城 / 拍賣</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <p class="eyebrow">Contact</p>
+        <h2>合作洽詢</h2>
+        <p>歡迎品牌主、電商業者、旅遊業者聯絡討論。聆聽您的需求，一起創造更多商業價值。</p>
+        <div class="acts">
+          <a class="btn" href="https://line.me/ti/p/TW6XFZzt_N" target="_blank" rel="noopener">LINE 洽詢 →</a>
+          <a class="btn ghost" id="mailBtn" href="#" hidden>寄信給我</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 鍾憶慧 Hana Chung｜平面設計師</span>
+    <span class="soc">
+      <a href="https://line.me/ti/p/TW6XFZzt_N" target="_blank" rel="noopener">LINE</a>
+      <a href="https://www.facebook.com/OxOzhong/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/hana_workchung/" target="_blank" rel="noopener">Instagram</a>
+    </span>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg">
+    <header>
+      <div><small id="dlgTag" style="color:var(--accent);font-weight:600"></small><h3 id="dlgTitle"></h3></div>
+      <button class="x" id="dlgClose" aria-label="關閉">✕</button>
+    </header>
+    <p id="dlgDesc" style="color:var(--muted);margin:0"></p>
+    <p id="dlgLink" style="margin:10px 0 0"></p>
+    <div class="pics" id="dlgPics"></div>
+  </div>
+</dialog>
+
+<script>
+/* ====== 需要你修改的地方 ====== */
+// 聯絡信箱。若清空，「寄信給我」按鈕會自動隱藏。
+var EMAIL = "hana.work.chung@gmail.com";
+// 圖片與影片的來源網址（目前連到舊網站；若你把圖片放到新網站的 image 資料夾，改成 "image/" 即可）
+var BASE = "https://hanaintroduce.vercel.app/image/";
+var ROOT = "https://hanaintroduce.vercel.app/";
+/* ============================== */
+
+if (EMAIL.indexOf("@") > 0) {
+  var m = document.getElementById("mailBtn");
+  m.href = "mailto:" + EMAIL; m.hidden = false;
+}
+
+var works = [
+  {t:"個人接案｜廣告設計", tag:"服飾 / 社群", cats:["接案"], d:"平輸商品 / 美容廣告 / 髮品促銷 / 韓系衣服。",
+   imgs:["soho.jpg","soho2.jpg","soho7.jpg","soho8.jpg","soho9.jpg","soho10.jpg"]},
+  {t:"個人接案｜網頁設計", tag:"加盟企業", cats:["接案"], d:"雲計畫快速加盟計劃：品牌形象視覺與招商網頁設計。",
+   imgs:["@image/yun-1.jpg","@image/yun-2.jpg","@image/yun-3.jpg","@image/yun-4.jpg","@image/yun-5.jpg","@image/yun-6.jpg"], link:[ROOT+"cloudcomputing.html","查看網頁作品"]},
+  {t:"暫妍生計｜行銷設計", tag:"醫美 / 美容", cats:["醫美","美容"], d:"醫美診所：社群貼文、Banner、限時動態。", imgs:["3.jpg"]},
+  {t:"格蘭國際｜社群小編", tag:"旅遊", cats:["旅遊"], d:"2023.02 – 2024.02，旅行社：旅遊 DM、活動 Banner、限時動態。", imgs:["05.jpg","06.jpg","5.jpg"]},
+  {t:"采豐行銷｜美編設計", tag:"電視購物", cats:["電視購物"], d:"商品簡報、廣告 DM、電視字卡設計。", imgs:["12.jpg","13.jpg"]},
+  {t:"媚瑞斯國際｜電商美編", tag:"電視購物 / 電商", cats:["電視購物","電商平台"], d:"Lancôme、Gucci、Sulwhasoo 等品牌商品廣告素材設計，商品圖修圖與文案撰寫。", imgs:["14.jpg"]},
+  {t:"時林企業｜美編人員", tag:"電商平台", cats:["電商平台"], d:"2017.03 – 2018.03，電商：商品攝影、客服小編、商品上下架、廣告製作。", imgs:["15.jpg"]}
+];
+var cats = ["全部","接案","醫美","旅遊","美容","電視購物","電商平台"];
+
+function src(p){ if (p.charAt(0)==="@") return p.slice(1); return p.indexOf("../")===0 ? ROOT + p.slice(3) : BASE + p; }
+
+var chipsEl = document.getElementById("chips"), gridEl = document.getElementById("worksGrid");
+function renderWorks(cat){
+  gridEl.innerHTML = "";
+  works.filter(function(w){ return cat==="全部" || w.cats.indexOf(cat)>-1; }).forEach(function(w){
+    var b = document.createElement("button"); b.className="card"; b.type="button";
+    var cover = document.createElement("div"); cover.className="cover";
+    if (w.imgs.length){ var im=document.createElement("img"); im.loading="lazy"; im.alt=w.t; im.src=src(w.imgs[0]); im.onerror=function(){cover.textContent=w.t.charAt(0);im.remove();}; cover.appendChild(im); }
+    else cover.textContent = w.t.charAt(0);
+    var body = document.createElement("div"); body.className="body";
+    body.innerHTML = "<small></small><h3></h3><p></p>";
+    body.children[0].textContent=w.tag; body.children[1].textContent=w.t; body.children[2].textContent=w.d;
+    b.appendChild(cover); b.appendChild(body);
+    b.onclick=function(){ openWork(w); };
+    gridEl.appendChild(b);
+  });
+}
+cats.forEach(function(c,i){
+  var b=document.createElement("button"); b.className="chip"; b.type="button"; b.textContent=c;
+  b.setAttribute("aria-pressed", i===0?"true":"false");
+  b.onclick=function(){ Array.prototype.forEach.call(chipsEl.children,function(x){x.setAttribute("aria-pressed","false");}); b.setAttribute("aria-pressed","true"); renderWorks(c); };
+  chipsEl.appendChild(b);
+});
+renderWorks("全部");
+
+var dlg=document.getElementById("dlg");
+function openWork(w){
+  document.getElementById("dlgTag").textContent=w.tag;
+  document.getElementById("dlgTitle").textContent=w.t;
+  document.getElementById("dlgDesc").textContent=w.d;
+  var l=document.getElementById("dlgLink"); l.innerHTML="";
+  if (w.link){ var a=document.createElement("a"); a.href=w.link[0]; a.target="_blank"; a.rel="noopener"; a.textContent=w.link[1]+" →"; a.style.color="var(--accent)"; l.appendChild(a); }
+  var pics=document.getElementById("dlgPics"); pics.innerHTML="";
+  w.imgs.forEach(function(p){ var im=document.createElement("img"); im.loading="lazy"; im.alt=w.t; im.src=src(p); pics.appendChild(im); });
+  dlg.showModal();
+}
+document.getElementById("dlgClose").onclick=function(){dlg.close();};
+dlg.addEventListener("click",function(e){ if(e.target===dlg) dlg.close(); });
+
+/* ===== 報價 ===== */
+var e=encodeURIComponent;
+var prices = [
+ {n:"LINE@ 圖文訊息", u:"篇，含群發設定", m:[["780386.jpg","圖文選單圖片加文案"],["780387.jpg","圖文選單圖片加文案"]]},
+ {n:"LINE@ 圖文選單", u:"張，可幫忙設置按鈕", m:[1,2,3,4,5].map(function(i){return [e("圖文選單")+i+".jpg","可以幫忙設置按鈕"];})},
+ {n:"FB 貼文圖文", u:"張，含文案發送", m:[["781201_0.jpg","產品介紹"],["781202_0.jpg","效果對比"]]},
+ {n:"FB / IG 靜態限時動態", u:"張", m:[["ig1.png","產品介紹"],["ig2.png","活動介紹"],["781204_0.jpg","儀器介紹"],["781208_0.jpg","效果對比"],["781210_0.jpg","活動宣傳"],["781203_0.jpg","療程介紹"],["781205_0.jpg","療程宣傳"],["781206_0.jpg","療程宣傳"],["781207_0.jpg","效果對比"]]},
+ {n:"FB / IG 動態限時動態", u:"張", m:[["download.mp4","IG 限時動態"],["download2.mp4","IG 限時動態"],["download%20%282%29.mp4","IG 限時動態"]]},
+ {n:"FB / IG 科普限時動態", u:"張", m:[[e("點滴")+".mp4","科普文四張左右 限時動態"],[e("肉毒")+".mp4","科普文四張左右 限時動態"],[e("美背")+".mp4","科普文四張左右 限時動態"]]},
+ {n:"靜態廣告素材", u:"張", m:[["781211_0.jpg","靜態廣告 Banner"],["781212_0.jpg","靜態廣告 Banner"]]},
+ {n:"靜態廣告素材（合成較多）", u:"張", m:[[e("文宣")+"3.mp4",""],[e("文宣")+"4.mp4",""]]},
+ {n:"動態廣告（有劇情）", u:"張", m:[[e("文宣")+"1.mp4",""],[e("文宣")+"2.mp4",""]]},
+ {n:"DM 設計", u:"張起", m:[["%E5%BE%B7%E5%9C%8B%E5%A4%96%E6%B3%8C%E9%AB%94%20%282%29_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F%201%20%E8%A4%87%E6%9C%AC%206.jpg","醫美 DM 設計"]]},
+ {n:"官網撰文上架", u:"含上架，1 圖；可加購圖片", m:[["../img16.jpg","婭瑞斯國際｜官網商品頁設計"],["../img17.jpg","時林企業｜翡翠商品頁設計"]]}
+];
+var list=document.getElementById("priceList");
+prices.forEach(function(it){
+  var d=document.createElement("details"); d.className="item";
+  var s=document.createElement("summary");
+  s.innerHTML='<span class="name"><b></b><small></small></span><span class="caret" aria-hidden="true">›</span>';
+  s.querySelector("b").textContent=it.n; s.querySelector("small").textContent=it.u;
+  d.appendChild(s);
+  var built=false;
+  d.addEventListener("toggle",function(){
+    if(!d.open||built) return; built=true;
+    var st=document.createElement("div"); st.className="strip";
+    it.m.forEach(function(x){
+      var f=document.createElement("div"); f.className="shot";
+      var path=x[0], isVid=/\.mp4$/i.test(path), el;
+      if(isVid){ el=document.createElement("video"); el.controls=true; el.preload="metadata"; el.playsInline=true; el.src=src(path); }
+      else { el=document.createElement("img"); el.loading="lazy"; el.alt=x[1]||it.n; el.src=src(path); }
+      f.appendChild(el);
+      if(x[1]){ var c=document.createElement("small"); c.textContent=x[1]; f.appendChild(c); }
+      st.appendChild(f);
+    });
+    d.appendChild(st);
+  });
+  list.appendChild(d);
+});
+
+/* ===== 技能 ===== */
+var skills=[["Illustrator","熟練"],["Photoshop","熟練"],["Figma","尚可"],["Premiere","學過"],["InDesign","學過"],["Dreamweaver","學過"],["After Effects","學過"],["3D Max","學過"],["平面設計","專長"],["社群小編","專長"],["影片剪輯","專長"],["電商上下架","專長"]];
+var lv=document.getElementById("levels");
+skills.forEach(function(k){
+  var d=document.createElement("div"); d.className="lv"+(k[1]==="專長"?" core":"");
+  d.innerHTML="<span></span><em></em>"; d.children[0].textContent=k[0]; d.children[1].textContent=k[1]; lv.appendChild(d);
+});
+</script>
+</body>
+</html>
